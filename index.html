@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Card Counter PRO</title>
+</head>
+<body>
+    <div class="first">
+        <div class="second">
+            <!-- <img src="images/card-symbols.jpg" alt="" height="150px"> -->
+            <i class="card-symbols">♠</i>
+            <i class="card-symbols">♣</i>
+            <i class="card-symbols">♥</i>
+            <i class="card-symbols">♦</i>
+            <h1><b>Card Counter PRO</b></h1>
+            <i class="card-symbols">♠</i>
+            <i class="card-symbols">♣</i>
+            <i class="card-symbols">♥</i>
+            <i class="card-symbols">♦</i>
+            <!-- <img src="images/card-symbols.jpg" alt="" height="150px"> -->
+        </div>
+        <section class="flex">
+
+            <!-- this is the first half -->
+            <div class="first-flex">
+                <div class="balance">
+                    <h2>Balance:</h2>
+                    <h2 id="balanceAmt">$1,000,000</h2>
+                </div>
+                <h2>Suggestion</h2>
+                <h2 id="suggestion">Suggestion</h2>
+
+                <div class="count">
+                    <h2>Count</h2>
+                    <h2 id="countAmt">#</h2>
+                </div>
+                
+                <h2>Bet</h2>
+                <div><button class="btn" id="upChevron"><h2>Up Chevron</h2></button></div>
+                <h2 id="betAmt">5000</h2>
+                <div><button class="btn" id="downChevron"><h2>Down Chevron</h2></button></div>
+            </div>
+
+            <!-- this is the second half -->
+            <div class="second-flex">
+                <div class="game">
+                    <div class="game-top">
+                        <button id="playAgain" class="btn game-btn">Play Again</button>
+                        <button id="deal" class="btn game-btn">Deal</button>
+                        <div id="instructions"><h1>Place Your Bet</h1></div>
+                    </div>
+
+                    <div class="flex" id="dealerCardRow">
+                        <div id="faceDown"><img src="images/cards/face-down.jpg" alt="" height="150px"></div>
+                        <div id="faceUp"><img src="images/cards/ace-spades.jpg" alt="" height="150px"></div>
+                    </div>
+    
+                    <div class="pot">
+                        <h2>Pot</h2>
+                        <h2 id="potAmt">#</h2>
+                    </div>
+
+                    <div class="flex" id="playerCardRow">
+                        <div id="firstCard"><img src="images/cards/king-spades.jpg" alt="" height="150px"></div>
+                        <div id="secondCard"><img src="images/cards/queen-spades.jpg" alt="" height="150px"></div>
+                    </div>
+                </div>
+
+                <!-- this is the buttons -->
+                <div class="buttons">
+                    <button class="btn game-btn" id="hit"><h2>Hit</h2></button>
+                    <button class="btn game-btn" id="stay"><h2>Stay</h2></button>
+                    <button class="btn game-btn" id="split"><h2>Split</h2></button>
+                    <button class="btn game-btn" id="doubleDown"><h2>Double Down</h2></button>
+                    <button class="btn game-btn" id="bet1000"><h2>Bet $1,000</h2></button>
+                    <button class="btn game-btn" id="bet5000"><h2>Bet $5,000</h2></button>
+                    <button class="btn game-btn" id="bet50000"><h2>Bet $50,000</h2></button>
+                    <button class="btn game-btn" id="bet1000000"><h2>Bet $1,000,000</h2></button>
+                </div>
+
+            </div>
+
+            <div class="rules">
+                <h2>Rules:</h2>
+                <ol>
+                    <li>When the count is up, bet high.</li>
+                    <li>When the count is down, bet low.</li>
+                    <li>Always follow basic strategy (chart below).</li>
+                </ol>
+            </div>
+        </section>
+
+            <!-- this is the fourth quarter -->
+            <div class="basic-strategy">
+                <img src="images/Blackjack-Chart-Strategy.jpg" alt="" height="1100px">
+            </div>
+    </div>
+
+    <script src='./app.js' type="module"></script>
+    
+</body>
+</html>

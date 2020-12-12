@@ -1,0 +1,158 @@
+ :root {
+     --darker: #0b0c10;
+     --lighter: #1f2833;
+     --grey: #c5c6c7;
+     --light-blue: #66fcf1;
+     --dark-blue: #45a29e;
+ }
+ 
+ body {
+    font-family: helvetica;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+.first {
+    color: var(--lighter);
+    background-color: var(--light-blue);
+}
+
+.second {
+    padding: 10px 10px;
+    font-size: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-symbols {
+    font-size: 130px;
+}
+
+.flex {
+    display: flex;
+
+}
+
+.first-flex {
+    padding: 20px 35px;
+    margin: 0px;
+    margin-left: 50px;
+    color: var(--light-blue);
+    text-align: center;
+    background-color: var(--darker);
+    width: 15%;
+}
+
+.balance {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: var(--dark-blue);
+    color: var(--darker);
+}
+
+#suggestion {
+    border: 0px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    color: var(--darker);
+    background-color: var(--dark-blue);
+}
+
+.count {
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    padding: 15px;
+    color: var(--darker);
+}
+
+.btn {
+    background-color: var(--lighter);
+    color: var(--light-blue);
+    width: 200px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn:disabled {
+    color: var(--grey);
+    /* background-color: var(--grey); */
+}
+
+.second-flex {
+    padding: 0;
+    margin: 0px;
+    margin-left: 45px;
+    margin-right: 45px;
+    width: 55%;
+}
+
+.game {
+    color: var(--light-blue);
+    background-color: var(--lighter);
+    padding: 20px 35px;
+}
+
+.game-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    padding-bottom: 20px;
+}
+
+#deal {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#playAgain {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.game h1 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.pot h1 {
+    text-align: left;
+}
+
+.buttons {
+    text-align: center;
+
+}
+
+.game-btn {
+    margin: 10px 20px;
+    background-color: var(--darker);
+}
+
+.rules {
+    font-size: 30px;
+    width: 15%;
+    line-height: 2em;
+    background-color: var(--darker);
+    padding: 20px 35px;
+    margin-right: 50px;
+    color: var(--light-blue);
+}
+
+.rules h2 {
+    font-size: 45px;
+}
+
+.basic-strategy {
+    text-align: center;
+}
+
+.hidden {
+    visibility: hidden;
+}
