@@ -51,5 +51,5 @@ module.exports.deckImages = {
     "10d": "ten-diamonds",
     "jd": "jack-diamonds",
     "qd": "queen-diamonds",
-    "kd": "king-diamond>"
+    "kd": "king-diamond"
 }

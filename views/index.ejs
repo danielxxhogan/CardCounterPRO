@@ -10,7 +10,7 @@
 <body>
     <div class="first">
         <div class="second">
-            <!-- <img src="images/card-symbols.jpg" alt="" height="150px"> -->
+            <!-- header -->
             <i class="card-symbols">♠</i>
             <i class="card-symbols">♣</i>
             <i class="card-symbols">♥</i>
@@ -20,96 +20,93 @@
             <i class="card-symbols">♣</i>
             <i class="card-symbols">♥</i>
             <i class="card-symbols">♦</i>
-            <!-- <img src="images/card-symbols.jpg" alt="" height="150px"> -->
         </div>
         <section class="flex">
 
-            <!-- this is the first half -->
+            <!-- 1/3 -->
             <div class="first-flex">
                 <div class="balance">
                     <h2>Balance:</h2>
-                    <h2 id="balanceAmt"><%= values.balance %></h2>
+                    <h2><%= values.balance %></h2>
                 </div>
                 <h2>Suggestion</h2>
                 <h2 id="suggestion"><%= values.suggestion %></h2>
 
                 <div class="count">
                     <h2>Count</h2>
-                    <h2 id="countAmt"><%= values.count %></h2>
+                    <h2><%= values.count %></h2>
                 </div>
-                
+                <!-- bet chevrons -->
                 <h2>Bet</h2>
-                <form action="/upChevron" method="post">
-                    <div><button class="btn" id="upChevron"><h2>Up Chevron</h2></button></div>
+                <form <%= values.upChevronEnabled %>>
+                    <div><button class="btn" <%= values.betDisabled %>><h2>Up Chevron</h2></button></div>
                 </form>
-                <h2 id="betAmt"> <%= values.playerBet %> </h2>
-                <form action="/downChevron" method="post">
-                    <div><button class="btn" id="downChevron"><h2>Down Chevron</h2></button></div>
+                <h2> <%= values.playerBet %> </h2>
+                <form <%= values.downChevronEnabled %>>
+                    <div><button class="btn" <%= values.betDisabled %>><h2>Down Chevron</h2></button></div>
                     </form>
             </div>
 
-            <!-- this is the second half -->
+            <!-- 2/3 -->
             <div class="second-flex">
                 <div class="game">
                     <div class="game-top">
-                        <form  <%= values.playAgainEnabled %>>
-                            <button id="playAgain" class="btn game-btn">Play Again</button>
+                        <form action='/playAgain' method='post'>
+                            <button id="playAgain" class="btn game-btn" <%= values.playAgainDisabled %>>Play Again</button>
                         </form>
-                        <form  <%= values.dealEnabled %>>
-                            <button id="deal" class="btn game-btn">Deal</button>
+                        <form action='/deal' method='post'>
+                            <button id="deal" class="btn game-btn" <%= values.dealDisabled %>>Deal</button>
                         </form>
-                        <div id="instructions"><h1><%= values.instructions %></h1></div>
+                        <div><h1><%= values.instructions %></h1></div>
                     </div>
 
-                    <!-- when the page renders, it needs to create a div for however many cards it might -->
-                    <!-- need to display. I need to put a for loop here and loop over the array that are passed -->
-                    <!-- in with values. -->
-                    <div class="flex" id="dealerCardRow">
-                        <div id="faceDown" <%= values.fdHidden %>><img src="images/cards/<%= values.faceDown %>.jpg" alt="" height="150px"></div>
-                        <div id="faceUp" <%= values.fdHidden %>><img src="images/cards/<%= values.faceUp %>.jpg" alt="" height="150px"></div>
+                    <!-- dealer cards -->
+                    <div class="flex">
+                        <% for (let i=0; i<values.dca.length; i++) { %>
+                            <div <%= values.hideCards %>><img src="images/cards/<%= values.dca[i] %>.jpg" alt="" height="150px"></div>
+                        <% } %>
                     </div>
     
                     <div class="pot">
                         <h2>Pot</h2>
-                        <h2 id="potAmt"><%= values.pot %></h2>
+                        <h2><%= values.pot %></h2>
                     </div>
-
-                    <div class="flex" id="playerCardRow">
-                        <div id="firstCard" <%= values.fdHidden %>><img src="images/cards/<%= values.firstCard %>.jpg" alt="" height="150px"></div>
-                        <div id="secondCard" <%= values.fdHidden %>><img src="images/cards/<%= values.secondCard %>.jpg" alt="" height="150px"></div>
+                    <!-- player cards -->
+                    <div class="flex">
+                        <% for (let i=0; i<values.cards.length; i++) { %>
+                            <div <%= values.hideCards %>><img src="images/cards/<%= values.cards[i] %>.jpg" alt="" height="150px"></div>
+                        <% } %>
                     </div>
                 </div>
 
-                <!-- this is the buttons -->
-
+                <!-- game buttons -->
                 <div class="buttons">
-                    <form <%= values.hitEnabled %>>
-                        <button class="btn game-btn" id="hit"><h2>Hit</h2></button>
+                    <form action='/hit' method='post'>
+                        <button class="btn game-btn" <%= values.hitDisabled %>><h2>Hit</h2></button>
                     </form>
-                    <form <%= values.stayEnabled %>>
-                        <button class="btn game-btn" id="stay"><h2>Stay</h2></button>
+                    <form action='/stay' method='post'>
+                        <button class="btn game-btn" <%= values.stayDisabled %>><h2>Stay</h2></button>
                     </form>
-                    <form <%= values.splitEnabled %>>
-                        <button class="btn game-btn" id="split"><h2>Split</h2></button>
+                    <form action='/split' method='post'>
+                        <button class="btn game-btn" <%= values.splitDisabled %>><h2>Split</h2></button>
                     </form>
-                    <form <%= values.doubleDownEnabled %>>
-                        <button class="btn game-btn" id="doubleDown"><h2>Double Down</h2></button>
+                    <form action='/dobleDown' method='post'>
+                        <button class="btn game-btn" <%= values.doubleDownDisabled %>><h2>Double Down</h2></button>
                     </form>
-                    <form <%= values.bet1000Enabled %>>
-                        <button class="btn game-btn" id="bet1000"><h2>Bet $1,000</h2></button>
+                    <!-- bet buttons -->
+                    <form action='/bet1000' method='post'>
+                        <button class="btn game-btn" <%= values.betDisabled %>><h2>Bet $1,000</h2></button>
                     </form>
-                    <form <%= values.bet5000Enabled %>>
-                        <button class="btn game-btn" id="bet5000"><h2>Bet $5,000</h2></button>
+                    <form action='/bet5000' method='post'>
+                        <button class="btn game-btn" <%= values.betDisabled %>><h2>Bet $5,000</h2></button>
                     </form>
-                    <form <%= values.bet50000Enabled %>>
-                        <button class="btn game-btn" id="bet50000"><h2>Bet $50,000</h2></button>
+                    <form action='/bet50000' method='post'>
+                        <button class="btn game-btn" <%= values.betDisabled %>><h2>Bet $50,000</h2></button>
                     </form>
-                    <form <%= values.bet1000000Enabled %>>
-                        <button class="btn game-btn" id="bet1000000"><h2>Bet $1,000,000</h2></button>
+                    <form action='/bet1000000' method='post'>
+                        <button class="btn game-btn" <%= values.betDisabled %>><h2>Bet $1,000,000</h2></button>
                     </form>
-                    
                 </div>
-
             </div>
 
             <div class="rules">
