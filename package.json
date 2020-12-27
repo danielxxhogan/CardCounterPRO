@@ -1,0 +1,24 @@
+{
+  "name": "cardcounterpro",
+  "version": "1.0.0",
+  "description": "Black Jack card counting web game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rando-mane/CardCounterPRO.git"
+  },
+  "author": "Daniel Hogan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rando-mane/CardCounterPRO/issues"
+  },
+  "homepage": "https://github.com/rando-mane/CardCounterPRO#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}

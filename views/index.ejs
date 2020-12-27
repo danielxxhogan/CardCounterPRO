@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Card Counter PRO</title>
+</head>
+<body>
+    <div class="first">
+        <div class="second">
+            <!-- <img src="images/card-symbols.jpg" alt="" height="150px"> -->
+            <i class="card-symbols">♠</i>
+            <i class="card-symbols">♣</i>
+            <i class="card-symbols">♥</i>
+            <i class="card-symbols">♦</i>
+            <h1><b>Card Counter PRO</b></h1>
+            <i class="card-symbols">♠</i>
+            <i class="card-symbols">♣</i>
+            <i class="card-symbols">♥</i>
+            <i class="card-symbols">♦</i>
+            <!-- <img src="images/card-symbols.jpg" alt="" height="150px"> -->
+        </div>
+        <section class="flex">
+
+            <!-- this is the first half -->
+            <div class="first-flex">
+                <div class="balance">
+                    <h2>Balance:</h2>
+                    <h2 id="balanceAmt"><%= values.balance %></h2>
+                </div>
+                <h2>Suggestion</h2>
+                <h2 id="suggestion"><%= values.suggestion %></h2>
+
+                <div class="count">
+                    <h2>Count</h2>
+                    <h2 id="countAmt"><%= values.count %></h2>
+                </div>
+                
+                <h2>Bet</h2>
+                <form action="/upChevron" method="post">
+                    <div><button class="btn" id="upChevron"><h2>Up Chevron</h2></button></div>
+                </form>
+                <h2 id="betAmt"> <%= values.playerBet %> </h2>
+                <form action="/downChevron" method="post">
+                    <div><button class="btn" id="downChevron"><h2>Down Chevron</h2></button></div>
+                    </form>
+            </div>
+
+            <!-- this is the second half -->
+            <div class="second-flex">
+                <div class="game">
+                    <div class="game-top">
+                        <form  <%= values.playAgainEnabled %>>
+                            <button id="playAgain" class="btn game-btn">Play Again</button>
+                        </form>
+                        <form  <%= values.dealEnabled %>>
+                            <button id="deal" class="btn game-btn">Deal</button>
+                        </form>
+                        <div id="instructions"><h1><%= values.instructions %></h1></div>
+                    </div>
+
+                    <!-- when the page renders, it needs to create a div for however many cards it might -->
+                    <!-- need to display. I need to put a for loop here and loop over the array that are passed -->
+                    <!-- in with values. -->
+                    <div class="flex" id="dealerCardRow">
+                        <div id="faceDown" <%= values.fdHidden %>><img src="images/cards/<%= values.faceDown %>.jpg" alt="" height="150px"></div>
+                        <div id="faceUp" <%= values.fdHidden %>><img src="images/cards/<%= values.faceUp %>.jpg" alt="" height="150px"></div>
+                    </div>
+    
+                    <div class="pot">
+                        <h2>Pot</h2>
+                        <h2 id="potAmt"><%= values.pot %></h2>
+                    </div>
+
+                    <div class="flex" id="playerCardRow">
+                        <div id="firstCard" <%= values.fdHidden %>><img src="images/cards/<%= values.firstCard %>.jpg" alt="" height="150px"></div>
+                        <div id="secondCard" <%= values.fdHidden %>><img src="images/cards/<%= values.secondCard %>.jpg" alt="" height="150px"></div>
+                    </div>
+                </div>
+
+                <!-- this is the buttons -->
+
+                <div class="buttons">
+                    <form <%= values.hitEnabled %>>
+                        <button class="btn game-btn" id="hit"><h2>Hit</h2></button>
+                    </form>
+                    <form <%= values.stayEnabled %>>
+                        <button class="btn game-btn" id="stay"><h2>Stay</h2></button>
+                    </form>
+                    <form <%= values.splitEnabled %>>
+                        <button class="btn game-btn" id="split"><h2>Split</h2></button>
+                    </form>
+                    <form <%= values.doubleDownEnabled %>>
+                        <button class="btn game-btn" id="doubleDown"><h2>Double Down</h2></button>
+                    </form>
+                    <form <%= values.bet1000Enabled %>>
+                        <button class="btn game-btn" id="bet1000"><h2>Bet $1,000</h2></button>
+                    </form>
+                    <form <%= values.bet5000Enabled %>>
+                        <button class="btn game-btn" id="bet5000"><h2>Bet $5,000</h2></button>
+                    </form>
+                    <form <%= values.bet50000Enabled %>>
+                        <button class="btn game-btn" id="bet50000"><h2>Bet $50,000</h2></button>
+                    </form>
+                    <form <%= values.bet1000000Enabled %>>
+                        <button class="btn game-btn" id="bet1000000"><h2>Bet $1,000,000</h2></button>
+                    </form>
+                    
+                </div>
+
+            </div>
+
+            <div class="rules">
+                <h2>Rules:</h2>
+                <ol>
+                    <li>When the count is up, bet high.</li>
+                    <li>When the count is down, bet low.</li>
+                    <li>Always follow basic strategy (chart below).</li>
+                </ol>
+            </div>
+        </section>
+
+            <!-- this is the fourth quarter -->
+            <div class="basic-strategy">
+                <img src="images/Blackjack-Chart-Strategy.jpg" alt="" height="1100px">
+            </div>
+    </div>
+
+    <!-- <script src='index.js' type="module"></script> -->
+    
+</body>
+</html>
