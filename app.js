@@ -215,7 +215,7 @@ function calculateScore() {
 }
 
 function updateCount(value) {
-    if (value <= 5) {
+    if (value <= 6) {
         count += 1;
     } else if (value >= 10) {
         count -= 1;
