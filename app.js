@@ -6,6 +6,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
+// import values from "./setup";
+
 const v = require(__dirname + "/setup");
 const values = v.values;
 
@@ -53,7 +55,6 @@ app.get("/", (req, res) => {
 
 
 app.post("/deal", (req, res) => {
-    // res.send("you hit deal");
     values.betDisabled = "disabled";
     res.redirect("/");
 

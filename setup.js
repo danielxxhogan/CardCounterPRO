@@ -1,3 +1,5 @@
+// const values = {
+
 module.exports.values = {
     
     balance: 1000000,
@@ -21,3 +23,4 @@ module.exports.values = {
     split: false,
     hand: 1
 }
+// export default values;
