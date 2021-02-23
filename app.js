@@ -80,7 +80,7 @@ upChevron.addEventListener("click", () => {
     betAmt.innerHTML = playerBet;
 })
 downChevron.addEventListener("click", () => {
-    if (playerBalance >= 1000) {
+    if (playerBet >= 1000) {
         playerBet -= 1000;
         betAmt.innerHTML = playerBet;
     }
